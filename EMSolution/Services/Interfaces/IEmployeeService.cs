@@ -11,5 +11,7 @@ namespace Services.Interfaces
     {
         Task<IEnumerable<SEmployee>> ConsultarAsync();
         Task<IEnumerable<SEmployee>> ConsultarAsyncByID(int id);
+        Task<IEnumerable<SEmployee>> CrearAsync(int id);
+
     }
 }
