@@ -31,12 +31,13 @@ namespace WebAPI
 
             services.AddControllers();
 
-            // Dependency Injection to DbContext for Azure Web Database Connection
+            // Dependency Injection to DbContext for Database Connection in Memory
             services.AddDbContext<DBServicioContext>(
                 options => options.UseInMemoryDatabase(
                     Configuration.GetConnectionString("EMConnection")        
                 )
             );
+            services.AddScoped<DBServicioContext>();
 
 
             services.AddSwaggerGen(c =>

@@ -24,6 +24,21 @@ namespace DataAccess.Model.Context
             //Model Contraints
             base.OnModelCreating(builder);
             ModelConfig(builder);
+
+            //ManytoManyRelationship
+            builder.Entity<TaskByEmployee>()
+            .HasKey(t => new { t.EmployeeID, t.TaskID });
+
+            builder.Entity<TaskByEmployee>()
+                .HasOne(pt => pt.Employee)
+                .WithMany(p => p.TaskByEmployees)
+                .HasForeignKey(pt => pt.EmployeeID);
+
+            builder.Entity<TaskByEmployee>()
+                .HasOne(pt => pt.Task)
+                .WithMany(t => t.TaskByEmployees)
+                .HasForeignKey(pt => pt.TaskID);
+
         }
 
         private void ModelConfig(ModelBuilder modelBuilder)

@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Model.Entities
+namespace Services.Entities.Entry
 {
-    public class Task
+    class ETask
     {
-        public int TaskID { get; set; }
+        [MaxLength(100)]
         public string Title { get; set; }
+        [MaxLength(300)]
         public string Description { get; set; }
+        [MaxLength(10)]
         public string Priority { get; set; }
-
-        public ICollection<TaskByEmployee> TaskByEmployees { get; set; }
     }
 }

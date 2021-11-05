@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Model.Entities
+namespace Services.Entities.Out
 {
-    public class Employee
+    public class SEmployee
     {
         public int EmployeeID { get; set; }
         public string FullName { get; set; }
         public string Age { get; set; }
         public string Position { get; set; }
-
-        public ICollection<TaskByEmployee> TaskByEmployees{ get; set; }
-
     }
 }

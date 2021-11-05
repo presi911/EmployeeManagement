@@ -11,10 +11,12 @@ namespace DataAccess.Model.Entities
 
         public int Task_Employee_ID { get; set; }
         public int EmployeeID { get; set; }
+        public Employee Employee { get; set; }
         public int TaskID { get; set; }
+        public Task Task { get; set; }
 
-        public virtual Employee Employee { get; set; }
-        public virtual Task Task { get; set; }
+        //public Employee IdEmployeeNavigation { get; set; }
+        //public virtual Task IdTaskNavigation { get; set; }
 
     }
 }

@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Model.Entities
+namespace Services.Entities.Out
 {
-    public class Task
+    public class STask
     {
         public int TaskID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Priority { get; set; }
-
-        public ICollection<TaskByEmployee> TaskByEmployees { get; set; }
     }
 }
