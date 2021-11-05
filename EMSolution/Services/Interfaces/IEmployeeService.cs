@@ -1,4 +1,5 @@
-﻿using Services.Entities.Out;
+﻿using Services.Entities.Entry;
+using Services.Entities.Out;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Services.Interfaces
     {
         Task<IEnumerable<SEmployee>> ConsultarAsync();
         Task<IEnumerable<SEmployee>> ConsultarAsyncByID(int id);
-        Task<IEnumerable<SEmployee>> CrearAsync(int id);
+        Task<bool> CrearAsync(EEmployee dato);
 
     }
 }
